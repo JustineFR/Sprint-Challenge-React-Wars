@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import axios from 'axios';
 
 const App = () => {
+  const [people, setPeople] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://swapi.co/api/people/')
+    .then(response => {
+      // return console.log(response.data.results)
+      const result = response.data.results;
+      // console.log(result)
+      result.map(item => {
+        return console.log(item)
+      })
+      setPeople(result)
+    })
+
+  }, []) ;
+
+  
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
