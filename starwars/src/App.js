@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
+import CharacterCard from './components/CharacterCard';
 
 const App = () => {
   const [people, setPeople] = useState([]);
@@ -10,14 +11,11 @@ const App = () => {
     .then(response => {
       // return console.log(response.data.results)
       const result = response.data.results;
-      // console.log(result)
-      result.map(item => {
-        return console.log(item)
-      })
+      console.log(result)
       setPeople(result)
     })
 
-  }, []) ;
+  }, []);
 
   
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -30,6 +28,10 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      
+        {people.map(info => {
+        return <CharacterCard name={info.name} height={info.height} gender={info.gender} birth_year={people.birth_year} />
+        })}
     </div>
   );
 }
