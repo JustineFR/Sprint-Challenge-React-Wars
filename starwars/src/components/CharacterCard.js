@@ -4,7 +4,7 @@ import "./StarWars.css";
 
 const Container  = styled.div `
     background-color: #73977A;
-    width: 300px;
+    width: 400px;
     border: 1px solid black;
     margin: 10px;
     border-radius: 10px;
@@ -22,7 +22,7 @@ const ParaStyle = styled.p `
 
 function CharacterCard(props) {
     return (
-        <div>
+        <div className="container">
             <Container>
                 <NameStyle>{props.name}</NameStyle>
                 {/* <img src={props.homeworld} alt="Homeworld"></img> */}
@@ -33,6 +33,7 @@ function CharacterCard(props) {
                 <ParaStyle><strong>Hair Color: </strong>{props.hair_color}</ParaStyle>
             </Container>
         </div>
+       
     )
 }
 
