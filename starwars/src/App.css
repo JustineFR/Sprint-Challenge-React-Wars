@@ -2,6 +2,7 @@
 
 .App {
   text-align: center;
+  
 }
 
 .Header {
@@ -10,3 +11,11 @@
   padding: 50px;
 }
 /* write your parent styles in here for your App.js */
+
+.card-container {
+  /* max-width: 800px; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+}

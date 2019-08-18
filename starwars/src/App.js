@@ -3,6 +3,8 @@ import './App.css';
 import axios from 'axios';
 import CharacterCard from './components/CharacterCard';
 
+
+
 const App = () => {
   const [people, setPeople] = useState([]);
 
@@ -20,9 +22,11 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      <div className="card-container">
         {people.map(info => {
         return <CharacterCard name={info.name} height={info.height} gender={info.gender} birth_year={info.birth_year} hair_color={info.hair_color} eye_color={info.eye_color}/>
         })}
+        </div>
     </div>
   );
 }
